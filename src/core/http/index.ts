@@ -18,6 +18,6 @@ server.use(
 // Endpoints
 server.use("/pm2", pm2_routes);
 
-server.listen(6000, () => {
-  console.log("PM2 Agent is running on port 6000");
+server.listen(1000, () => {
+  console.log("PM2 Agent is running on port 1000");
 });
