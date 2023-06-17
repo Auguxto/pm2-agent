@@ -25,7 +25,7 @@ const start = async (id: number): Promise<string> => {
       return "Process already running.";
     }
   } catch {
-    return "Proccess start failed.";
+    return "Process start failed.";
   }
 
   return "";

@@ -25,7 +25,7 @@ const stop = async (id: number): Promise<string> => {
       return "Process already stopped.";
     }
   } catch {
-    return "Proccess stop failed.";
+    return "Process stop failed.";
   }
 
   return "";

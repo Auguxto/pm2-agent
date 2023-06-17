@@ -16,12 +16,12 @@ const restart = async (id: number): Promise<string> => {
         `[PM2] Applying action restartProcessId on app [${id}](ids: [ '${id}' ])`
       )
     ) {
-      return "Proccess restarted.";
+      return "Process restarted.";
     }
   } catch (error) {
     console.log(error);
 
-    return "Proccess restart failed.";
+    return "Process restart failed.";
   }
 
   return "";
