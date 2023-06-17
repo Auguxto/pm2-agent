@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 
-const config_file = path.join(__dirname, ".env");
+const config_file = path.join(__dirname, "..", ".env");
 
 function generate_random_api_key(): string {
   const randomData = crypto.randomBytes(16);

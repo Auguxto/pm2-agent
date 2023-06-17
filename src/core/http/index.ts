@@ -12,13 +12,13 @@ import authHandler from "./middleware/auth/handler";
 const server = express();
 
 // Handlers
-server.use(authHandler);
-server.use(express.json());
 server.use(
   cors({
     origin: "*",
   })
 );
+server.use(express.json());
+server.use(authHandler);
 
 // Endpoints
 server.use("/pm2", pm2_routes);
