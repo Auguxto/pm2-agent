@@ -4,17 +4,18 @@ import list from "../../../../pm2/list";
 import start from "../../../../pm2/start";
 import restart from "../../../../pm2/restart";
 import stop from "../../../../pm2/stop";
+import log from "../../../../pm2/log";
 
 const pm2_routes = Router();
 
-// List all proccess
+// List all process
 pm2_routes.get("/list", async (req, res) => {
-  const proccess = await list();
+  const process = await list();
 
-  return res.json(proccess);
+  return res.json(process);
 });
 
-// Start proccess
+// Start process
 pm2_routes.post("/start/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -23,7 +24,7 @@ pm2_routes.post("/start/:id", async (req, res) => {
   return res.json({ result });
 });
 
-// Stop proccess
+// Stop process
 pm2_routes.post("/stop/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -32,11 +33,20 @@ pm2_routes.post("/stop/:id", async (req, res) => {
   return res.json({ result });
 });
 
-// Restart proccess
+// Restart process
 pm2_routes.post("/restart/:id", async (req, res) => {
   const { id } = req.params;
 
   const result = await restart(Number(id));
+
+  return res.json({ result });
+});
+
+// Read log process
+pm2_routes.get("/log/:id", async (req, res) => {
+  const { id } = req.params;
+
+  const result = await log(Number(id));
 
   return res.json({ result });
 });
